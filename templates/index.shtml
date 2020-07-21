@@ -1,0 +1,79 @@
+{{template "header.shtml" .}}
+              <h1>collectd &ndash; The system statistics collection daemon</h1>
+              <p class="summary"><span class="collectd">collectd</span> is a
+              <a href="http://en.wikipedia.org/wiki/Daemon_(computer_software)">daemon</a> which collects system
+              and application performance metrics periodically and provides mechanisms to store the values in a variety
+              of ways, for example in
+              <a href="http://oss.oetiker.ch/rrdtool/"><acronym title="Round Robin Database">RRD</acronym> files</a>.</p>
+
+              <div class="ad top">
+                <a href="http://ssc-serv.com/">Collectd for Windows</a><br />
+                <span class="url">http://ssc-serv.com/</span><br />
+                <span class="tagline">High-resolution system metrics. Download free trial version!</span>
+                <div>Advertisement</div>
+              </div>
+
+              <h2>What does <span class="collectd">collectd</span> do?</h2>
+              <p><span class="collectd">collectd</span> gathers metrics from various sources, e.g. the operating system,
+              applications, logfiles and external devices, and stores this information or makes it available over the
+              network.
+              Those statistics can be used to monitor systems, find performance bottlenecks (i.e. <em>performance
+                analysis</em>) and predict future system load (i.e. <em>capacity planning</em>). Or if you just want
+              pretty graphs of your private server and are fed up with some homegrown solution you're at the right
+              place, too&nbsp;;).</p>
+
+              <p>A graph can say more than a thousand words, so here's a graph showing the 
+              <a href="/wiki/index.php/Plugin:CPU">CPU utilization</a> of a system over the last 60&nbsp;minutes:</p>
+              <img style="display: block; margin: 10px auto;" src="images/graph-cpu.png" width="497" height="272"
+                alt="Graph of CPU utilization" title="Pretty, ain't it?" />
+
+              <h2>Why <span class="collectd">collectd</span>?</h2>
+              <p>There are other free, open source projects that are similar to
+              <span class="collectd">collectd</span>&nbsp;– a few links are listed on the
+              <a href="related.shtml">related sites</a> page. So why should you use
+              <span class="collectd">collectd</span>? There are some key differences we think set
+              <span class="collectd">collectd</span> apart. For one, it's written in C for performance and portability,
+              allowing it to run on systems without scripting language or cron daemon, such as embedded systems.
+              For example, <span class="collectd">collectd</span> is popular on <em>OpenWrt</em>, a Linux distribution
+              for home routers.
+              At the same time it includes optimizations and features to handle hundreds of thousands of metrics.
+              The daemon comes with
+              <a href="/wiki/index.php/Table_of_Plugins" title="List of plugins">over 100&nbsp;plugins</a> which range
+              from standard cases to very specialized and advanced topics. It provides powerful networking features and
+              is extensible in numerous ways. Last but not least: <span class="collectd">collectd</span> is actively
+              developed and supported and well documented. A more complete
+              <a href="features.shtml">list of features</a> is available.</p>
+
+              <h3>Limitations</h3>
+              <p>While <span class="collectd">collectd</span>
+              <a href="features.shtml">can do a lot for you</a> and your administrative needs,
+              there are limits to what it does:</p>
+              <ul>
+                <li>It does not generate graphs. It can write to <a href="http://oss.oetiker.ch/rrdtool/"><acronym
+                    title="Round Robin Database">RRD</acronym> files</a>, but it cannot generate graphs from these
+                files. There's a tiny <a href="/wiki/index.php/First_steps#Creating_graphs">sample script</a> included
+                in <code>contrib/</code>, though. Take a look at
+                <a href="http://www.forwiss.uni-passau.de/~berberic/Linux/kcollectd.html">kcollectd</a>, an
+                X&nbsp;frontend, and <a href="http://web.taranis.org/drraw/">drraw</a>, a very generic solution, though.
+                More utility programs are listed on the
+                <a href="related.shtml">related projects</a> page.</li>
+
+                <li>Monitoring functionality has been added in version&nbsp;4.3, but is so far limited to simple
+                threshold checking. The document
+                <a href="/wiki/index.php/Notifications_and_thresholds">“Notifications and thresholds”</a> describes
+                <span class="collectd">collectd</span>'s monitoring concept and has some details on the limitations,
+                too. Also, there's a plugin for <a href="http://nagios.org/">Nagios</a>, so it can use the values
+                collected by <span class="collectd">collectd</span>.</li>
+              </ul>
+              <div style="text-align: center; font-size: smaller;">
+                <a href="contact.shtml#imprint">Imprint</a> |
+                <a href="http://www.facebook.com/collectd">Facebook</a> |
+                <a href="https://github.com/collectd">Github</a> |
+                <a href="https://plus.google.com/108065990339533055065" rel="publisher"> Google+</a> 
+                <a href="https://plus.google.com/communities/115799922821655063860">(Community)</a> |
+                <a href="http://identi.ca/collectd">identi.ca</a> |
+                <a href="https://twitter.com/collectd">Twitter</a> |
+                <a href="http://www.xing.com/net/collectd">Xing</a>
+              </div>
+{{template "footer.shtml"}}
+<!-- vim: set sw=2 sts=2 ts=8 et tw=120 : -->

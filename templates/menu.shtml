@@ -1,0 +1,117 @@
+              <h4>Navigation</h4>
+              <ul>
+                <li><a href="/index.shtml" title="Start page">Start page</a></li>
+                <li><a href="/features.shtml" title="Features">Features</a></li>
+		<li><a href="/news.shtml" title="News">News</a></li>
+                <li><a href="/download.shtml" title="Download">Download</a></li>
+                <li><a href="/faq.shtml" title="FAQs">FAQs</a></li>
+                <li><a href="/documentation.shtml" title="Documentation">Documentation</a></li>
+		<li><a href="/dev-info.shtml" title="Development">Development</a></li>
+                <li><a href="/contact.shtml" title="Contact">Contact</a></li>
+                <li><a href="/related.shtml" title="Related sites">Related sites</a></li>
+              </ul>
+              <hr />
+              <h4>Download</h4>
+              <ul>
+                <li><a href="https://storage.googleapis.com/collectd-tarballs/collectd-5.11.0.tar.bz2">collectd-5.11.0.tar.bz2</a></li>
+                <li><a href="https://storage.googleapis.com/collectd-tarballs/collectd-5.10.0.tar.bz2">collectd-5.10.0.tar.bz2</a></li>
+		<li><a href="/download.shtml">more&nbsp;…</a></li>
+              </ul>
+              <div id="socialshareprivacy"></div>
+              <hr />
+              <h4>Plugins</h4>
+              <ul>
+                <li><a href="/wiki/index.php/Plugin:Apache">Apache</a></li>
+                <li><a href="/wiki/index.php/Plugin:APC_UPS">APC UPS</a></li>
+                <li><a href="/wiki/index.php/Plugin:Apple_Sensors">Apple Sensors</a></li>
+                <li><a href="/wiki/index.php/Plugin:Ascent">Ascent</a></li>
+                <li><a href="/wiki/index.php/Plugin:Battery">Battery</a></li>
+                <li><a href="/wiki/index.php/Plugin:BIND">BIND</a></li>
+                <li><a href="/wiki/index.php/Plugin:ConnTrack">ConnTrack</a></li>
+                <li><a href="/wiki/index.php/Plugin:ContextSwitch">ContextSwitch</a></li>
+                <li><a href="/wiki/index.php/Plugin:CPU">CPU</a></li>
+                <li><a href="/wiki/index.php/Plugin:CPUFreq">CPUFreq</a></li>
+                <li><a href="/wiki/index.php/Plugin:CSV">CSV</a></li>
+                <li><a href="/wiki/index.php/Plugin:cURL">cURL</a></li>
+                <li><a href="/wiki/index.php/Plugin:cURL-JSON">cURL-JSON</a></li>
+                <li><a href="/wiki/index.php/Plugin:cURL-XML">cURL-XML</a></li>
+                <li><a href="/wiki/index.php/Plugin:DBI">DBI</a></li>
+                <li><a href="/wiki/index.php/Plugin:DF">DF</a></li>
+                <li><a href="/wiki/index.php/Plugin:Disk">Disk</a></li>
+                <li><a href="/wiki/index.php/Plugin:DNS">DNS</a></li>
+                <li><a href="/wiki/index.php/Plugin:E-Mail">E-Mail</a></li>
+                <li><a href="/wiki/index.php/Plugin:Entropy">Entropy</a></li>
+                <li><a href="/wiki/index.php/Plugin:Exec">Exec</a></li>
+                <li><a href="/wiki/index.php/Plugin:FileCount">FileCount</a></li>
+                <li><a href="/wiki/index.php/Plugin:FSCache">FSCache</a></li>
+                <li><a href="/wiki/index.php/Plugin:GenericJMX">GenericJMX</a></li>
+                <li><a href="/wiki/index.php/Plugin:gmond">gmond</a></li>
+                <li><a href="/wiki/index.php/Plugin:HDDTemp">hddtemp</a></li>
+                <li><a href="/wiki/index.php/Plugin:Interface">Interface</a></li>
+                <li><a href="/wiki/index.php/Plugin:IPMI">IPMI</a></li>
+                <li><a href="/wiki/index.php/Plugin:IPTables">IP-Tables</a></li>
+                <li><a href="/wiki/index.php/Plugin:IPVS">IPVS</a></li>
+                <li><a href="/wiki/index.php/Plugin:IRQ">IRQ</a></li>
+                <li><a href="/wiki/index.php/Plugin:Java">Java</a></li>
+                <li><a href="/wiki/index.php/Plugin:libvirt">libvirt</a></li>
+                <li><a href="/wiki/index.php/Plugin:Load">Load</a></li>
+                <li><a href="/wiki/index.php/Plugin:LogFile">LogFile</a></li>
+                <li><a href="/wiki/index.php/Plugin:MadWifi">MadWifi</a></li>
+                <li><a href="/wiki/index.php/Plugin:MBMon">MBMon</a></li>
+                <li><a href="/wiki/index.php/Plugin:memcachec">memcachec</a></li>
+                <li><a href="/wiki/index.php/Plugin:memcached">memcached</a></li>
+                <li><a href="/wiki/index.php/Plugin:Memory">Memory</a></li>
+                <li><a href="/wiki/index.php/Plugin:Modbus">Modbus</a></li>
+                <li><a href="/wiki/index.php/Plugin:Monitorus">Monitorus</a></li>
+                <li><a href="/wiki/index.php/Plugin:Multimeter">Multimeter</a></li>
+                <li><a href="/wiki/index.php/Plugin:MySQL">MySQL</a></li>
+                <li><a href="/wiki/index.php/Plugin:NetApp">NetApp</a></li>
+                <li><a href="/wiki/index.php/Plugin:Netlink">Netlink</a></li>
+                <li><a href="/wiki/index.php/Plugin:Network">Network</a></li>
+                <li><a href="/wiki/index.php/Plugin:NFS">NFS</a></li>
+                <li><a href="/wiki/index.php/Plugin:nginx">nginx</a></li>
+                <li><a href="/wiki/index.php/Plugin:Notify_Desktop">Notify Desktop</a></li>
+                <li><a href="/wiki/index.php/Plugin:Notify_Email">Notify Email</a></li>
+                <li><a href="/wiki/index.php/Plugin:NTPd">NTPd</a></li>
+                <li><a href="/wiki/index.php/Plugin:NUT">NUT</a></li>
+                <li><a href="/wiki/index.php/Plugin:olsrd">olsrd</a></li>
+                <li><a href="/wiki/index.php/Plugin:OneWire">OneWire</a></li>
+                <li><a href="/wiki/index.php/Plugin:OpenVPN">OpenVPN</a></li>
+                <li><a href="/wiki/index.php/Plugin:OpenVZ">OpenVZ</a></li>
+                <li><a href="/wiki/index.php/Plugin:Oracle">Oracle</a></li>
+                <li><a href="/wiki/index.php/Plugin:Perl">Perl</a></li>
+                <li><a href="/wiki/index.php/Plugin:Pinba">Pinba</a></li>
+                <li><a href="/wiki/index.php/Plugin:Ping">Ping</a></li>
+                <li><a href="/wiki/index.php/Plugin:PostgreSQL">PostgreSQL</a></li>
+                <li><a href="/wiki/index.php/Plugin:PowerDNS">PowerDNS</a></li>
+                <li><a href="/wiki/index.php/Plugin:Processes">Processes</a></li>
+                <li><a href="/wiki/index.php/Plugin:Protocols">Protocols</a></li>
+                <li><a href="/wiki/index.php/Plugin:Python">Python</a></li>
+                <li><a href="/wiki/index.php/Plugin:RouterOS">RouterOS</a></li>
+                <li><a href="/wiki/index.php/Plugin:RRDCacheD">RRDCacheD</a></li>
+                <li><a href="/wiki/index.php/Plugin:RRDtool">RRDtool</a></li>
+                <li><a href="/wiki/index.php/Plugin:Sensors">Sensors</a></li>
+                <li><a href="/wiki/index.php/Plugin:Serial">Serial</a></li>
+                <li><a href="/wiki/index.php/Plugin:SNMP">SNMP</a></li>
+                <li><a href="/wiki/index.php/Plugin:StatsD">StatsD</a></li>
+                <li><a href="/wiki/index.php/Plugin:Swap">Swap</a></li>
+                <li><a href="/wiki/index.php/Plugin:SysLog">SysLog</a></li>
+                <li><a href="/wiki/index.php/Plugin:Table">Table</a></li>
+                <li><a href="/wiki/index.php/Plugin:Tail">Tail</a></li>
+                <li><a href="/wiki/index.php/Plugin:Tape">Tape</a></li>
+                <li><a href="/wiki/index.php/Plugin:TCPConns">tcpconns</a></li>
+                <li><a href="/wiki/index.php/Plugin:TeamSpeak2">TeamSpeak2</a></li>
+                <li><a href="/wiki/index.php/Plugin:TED">TED</a></li>
+                <li><a href="/wiki/index.php/Plugin:thermal">thermal</a></li>
+                <li><a href="/wiki/index.php/Plugin:TokyoTyrant">TokyoTyrant</a></li>
+                <li><a href="/wiki/index.php/Plugin:UnixSock">UnixSock</a></li>
+                <li><a href="/wiki/index.php/Plugin:Uptime">Uptime</a></li>
+                <li><a href="/wiki/index.php/Plugin:Users">Users</a></li>
+                <li><a href="/wiki/index.php/Plugin:UUID">UUID</a></li>
+                <li><a href="/wiki/index.php/Plugin:vmem">vmem</a></li>
+                <li><a href="/wiki/index.php/Plugin:VServer">VServer</a></li>
+                <li><a href="/wiki/index.php/Plugin:Wireless">Wireless</a></li>
+                <li><a href="/wiki/index.php/Plugin:XMMS">XMMS</a></li>
+                <li><a href="/wiki/index.php/Plugin:Write_HTTP">Write HTTP</a></li>
+                <li><a href="/wiki/index.php/Plugin:ZFS_ARC">ZFS ARC</a></li>
+              </ul>

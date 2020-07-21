@@ -1,0 +1,66 @@
+{{template "header.shtml" .}}
+              <h1>Contact</h1>
+
+              <h2>Bugtracking system</h2>
+	      <p><span class="summary">The bugtracking system is the central platform for bugs and problems related to
+		collectd.</span> If you have a problem regarding <span class="collectd">collectd</span> or you have
+	      found a bug in the daemon or one of its plugin, please tend to
+	      <a href="https://github.com/collectd/collectd/issues">bugtracking system</a>. Be sure to check your
+	      problem has already be reported before filing a new bug and provide as much information as possible.</p>
+
+              <h2>Mailing list</h2>
+              <p><span class="summary">The mailing list is the central place for announcements and
+                development issues.</span> New versions of <span
+                class="collectd">collectd</span> are announced on the mailing list and we're
+              discussing development related topics here. It used to be <strong>the</strong> place for
+              bugs and problems, too, but this proved to be impractical. You can still ask your
+              questions there, but please make sure to <a href="faq.shtml">read the FAQs</a>
+              first. Please don't be surprised if we ask you to open a bug in the bugtracking system.</p>
+
+              <h3>Subscribe</h3>
+              <p>You can subscribe to the mailinglist at
+              <a href="http://mailman.verplant.org/listinfo/collectd">collectd's mailinglist page</a>.</p>
+
+              <h3>Post</h3>
+              <p>You can post to the list even if you're not subscribed. Your posting in held for approval in this case
+              though, to protect ourselves against spam. The email-address is
+              <code class="email">&lt;collectd@<span>ahj4oeY8aiKe</span>verplant.org&gt;</code>.</p>
+
+              <h3>Archives</h3>
+              <p>You can read archived message in the <a
+                href="http://mailman.verplant.org/pipermail/collectd/">mailinglist archives</a>.
+              Please do that before asking questions that may have been answered before.</p>
+
+              <h2>IRC</h2>
+              <p>Some of us are hanging out in <code>#collectd</code> on <a href="http://freenode.net/">freenode</a>.
+              Feel free to join us there&nbsp;:)</p>
+
+	      <h2>Google+</h2>
+	      <p>We have a <a href="https://plus.google.com/">Google+</a> page,
+	      <a href="https://plus.google.com/108065990339533055065" rel="publisher">+collectd</a>. We'll be using this
+	      as a development micro-blog and post about current developments, requests for review, cool new uses and so
+	      on. The link <a href="http://collectd.org/+">http://collectd.org/+</a> will redirect you to there.</p>
+
+	      <h2>Twitter</h2>
+	      <p>We have a <a href="http://twitter.com/collectd">Twitter</a> account named &quot;@collectd&quot; which we use for
+	      small project updates from time to time. Please feel free to &quot;follow&quot; us.</p>
+
+	      <h2>Security issues</h2>
+	      <p>To to report a <em>sensitive security issue</em>, reach out to 
+	      <code class="email">&lt;octo@<span></span>collectd.org&gt;</code>, GnuPG <code>0x0C705A15</code>.</p>
+
+	      <h2 id="imprint">Imprint</h2>
+              <p>This site is run by <a href="http://octo.it/">Florian octo Forster</a>,
+	      &lt;<code class="email">octo@<span>Yahy1eil</span>collectd.org</code>&gt;.</p>
+
+	      <h3>Postal address</h3>
+	      <address style="margin: 1em;">Florian Forster<br />
+                Stralsunder Straße&nbsp;46,<br />
+                90425&nbsp;Nürnberg</address>
+
+	      <h3>Disclaimer</h3>
+              <p>The german legislator requires me to dissociate myself from external links explicitly:</p>
+              <p xml:lang="DE_de">Hiermit distanziere ich mich ausdrücklich von allen Inhalten aller extern gelinkten
+              Seiten auf meinem Server und mache mir diese Inhalte nicht zu eigen. Diese Erklärung gilt für alle auf
+              meinem Server angebrachten externen Links.</p>
+{{template "footer.shtml"}}

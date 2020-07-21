@@ -1,0 +1,353 @@
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+a {
+  color: #0e6d9d;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #D96B11;
+}
+
+a[href^="http://"],
+a[href^="https://"]
+{
+	padding-left: 10px;
+	background-image: url(../images/link-extern.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+a[href^="/wiki/"]
+{
+	padding-left: 10px;
+	background-image: url(../images/link-wiki.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+h1 {
+  margin-top: 0px;
+  color: #D96B11;
+}
+
+img {
+  border: none;
+}
+
+div.box {
+  border: 1px solid black;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1ex;
+  margin-bottom: 1em;
+  padding: 0px;
+}
+div.box div.title {
+  background-color: silver;
+  border-bottom: 1px solid black;
+  padding: .5ex;
+  font-weight: bold;
+}
+div.box div.content {
+  padding: .5ex;
+}
+div.box.version4 {
+  border-color: maroon;
+}
+div.box.version4 div.title {
+  color: white;
+  background-color: maroon;
+  border-color: maroon;
+}
+div.box.version5 {
+  border-color: green;
+}
+div.box.version5 div.title {
+  color: white;
+  background-color: green;
+  border-color: green;
+}
+
+.checksum {
+  font-family: monospace;
+  font-size: x-small;
+}
+
+/*
+div.box.version5 {
+  background-color: #fff9f0;
+  border-color: #ffa500;
+}
+div.box.version5 div.title {
+  color: black;
+  background-color: #ffce7b;
+  border-color: #ffa500;
+}
+*/
+
+div.code
+{
+  border: 1px solid #B05128;
+  border-left-width: 5px;
+  padding: .5ex;
+  font-family: monospace;
+  background-color: #fff3ed;
+}
+
+div.code .variable,
+code .variable
+{
+  color: blue;
+  font-style: italic;
+}
+
+div.code .comment,
+code .comment
+{
+  color: gray;
+}
+
+ul.faq
+{
+  padding: 0px 1em;
+}
+
+ul.faq > li
+{
+  display: block;
+  margin: 0px 0px 1.5em 0px;
+  padding: 0px;
+}
+
+ul.faq div.question
+{
+  font-weight: bold;
+  margin: 0px 0px 1ex 0px;
+  padding: 0px;
+}
+
+ul.faq div.answer
+{
+  border-left: 2px solid green;
+  padding: 0px 0px 0px 1ex;
+}
+
+ul.news
+{
+  margin: 0px;
+  padding: 0px;
+}
+
+ul.news > li
+{
+  display: block;
+  margin: 0px 0px 1.5em 0px;
+}
+
+ul.news span.date
+{
+  font-size: 90%;
+}
+
+ul.news span.title
+{
+  font-size: 110%;
+}
+
+ul.news span.detail
+{
+  display: block;
+  margin: 0px;
+  padding: 1em 0px 0px 1em;
+  border-top: 1px solid #85B1D8;
+}
+
+ul.wide li
+{
+  margin-bottom: 0.8em;
+}
+
+.email span
+{
+  display: none;
+}
+
+.float.left
+{
+  float: left;
+}
+
+.float.right
+{
+  float: right;
+}
+
+/* Prefixed with the id to override default styles. */
+#socialshareprivacy ul.social_share_privacy_area
+{
+  height: auto;
+  margin: 1ex;
+}
+#socialshareprivacy ul.social_share_privacy_area li
+{
+  float: none;
+  width: auto;
+}
+
+div.ad
+{
+  position: relative;
+  padding: 0.7ex;
+  border: 1px solid rgb(128, 128, 128);
+  background: rgb(255, 247, 236);
+}
+
+div.ad.top
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50ex;
+}
+
+div.ad a
+{
+  padding-left: 0px;
+  color: rgb(15, 30, 180);
+  background-image: none;
+  text-decoration: underline;
+  font-size: medium;
+}
+
+div.ad span.url
+{
+  color: rgb(0, 128, 40);
+  font-size: 14px;
+}
+
+div.ad span.tagline
+{
+  font-size: small;
+}
+
+div.ad div
+{
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  font-size: x-small;
+  color: rgb(196,192,190);
+}
+
+      /*
+       * Table-layout specific styles
+       */
+      #layout-table { width: 100%; min-height: 100%; border-collapse: collapse; }
+      .layout-cell { padding: 0px; margin: 0px; border: none; vertical-align: top; }
+
+      /* Top left corner */
+      #l00 {
+        width: 208px;
+        height: 113px;
+        background-image: url(/images/table-blue/00.png);
+      }
+      #l00 a {
+        display: block;
+        width: 208px;
+        height: 113px;
+        background-image: url(/images/table-blue/collectd.png);
+        background-repeat: no-repeat;
+        background-position: 31px 53px;
+      }
+      #l00 h1 {
+        display: none;
+      }
+
+      /* Top bar */
+      #l02 {
+        height: 113px;
+        background-image: url(/images/table-blue/02.png);
+      }
+      #l02-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      #l02 .top-button {
+        display: block;
+        width: 90px;
+        height: 25px;
+        position: absolute;
+        bottom: 0px;
+        text-align: center;
+        padding: 4px 0px 0px 0px;
+        font-weight: bold;
+      }
+      #l02 div.top-button {
+        background-image: url(/images/table-blue/btn_active.png);
+      }
+      #l02 a.top-button {
+        background-image: url(/images/table-blue/btn_inact.png);
+        color: #B05128;
+      }
+      #l02 #btn-homepage {
+        right: 95px;
+      }
+      #l02 #btn-wiki {
+        right: 0px;
+      }
+
+      #l04 { width: 40px; height: 113px; background-image: url(/images/table-blue/04.png); }
+      #l10 { width: 26px; height: 20px; background-image: url(/images/table-blue/10.png); }
+      #l11 { width: 182px; height: 20px; background-image: url(/images/table-blue/11.png); }
+      #l12 { width: 4px; height: 20px; background-image: url(/images/table-blue/12.png); }
+      #l13 { height: 20px; background-image: url(/images/table-blue/13.png); }
+      #l14 { width: 40px; height: 20px; background-image: url(/images/table-blue/14.png); }
+      #l20 { width: 26px; background-image: url(/images/table-blue/20.png); }
+
+      /* Menu */
+      #l21 {
+              width: 172px;
+	      background-image: url(/images/table-blue/21.png);
+	      background-repeat: no-repeat; 
+	      background-color: #d6dade;
+      }
+      #l21 h4 {
+        margin: 0px 4px 1ex 4px;
+      }
+      #l21 ul {
+        margin: 0px;
+        padding: 0px;
+      }
+      #l21 li {
+        display: block;
+        margin: 0px;
+        padding: 0px;
+      }
+      #l21 a {
+        display: block;
+        padding: 1px 4px;
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      #l21 a:hover {
+        color: white;
+        background-color: #a0a0a0;
+      }
+
+      #l22 { width: 4px; background-color: #85b1d8; }
+
+      #l23 {
+        padding: 0px 5px 0px 5px;
+        background-color: #ffffff;
+      }
+
+      #l24 { width: 40px; background-image: url(/images/table-blue/24.png); }
+      #l30 { width: 212px; height: 40px; background-image: url(/images/table-blue/30.png); }
+      #l33 { height: 40px; background-image: url(/images/table-blue/33.png); }
+      #l34 { width: 40px; height: 40px; background-image: url(/images/table-blue/34.png); }

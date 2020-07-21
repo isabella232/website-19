@@ -1,0 +1,211 @@
+{{template "header.shtml" .}}
+              <h1>Related sites</h1>
+
+              <p>The following is a loosely collected list of articles about <span class="collectd">collectd</span>,
+              projects using <span class="collectd">collectd</span>, similar projects and other stuff that might be
+              interesting for our users and interested parties. If you have written or found something that should be
+              listed here, or if we made an error, e.&nbsp;g. in the description of a link, please
+              <a href="/contact.shtml">tell us</a>. All links are sorted alphabetically or not
+              at all. In any case the order does not reflect any kind of significance.</p>
+
+              <h3>Utility programs and projects</h3>
+              <div style="margin-left: 2em; font-style: italic;">For a <strong>list of graphing front-ends</strong>, see
+                our <a href="/wiki/index.php/List_of_front-ends">List of front-ends</a> wiki page.</div>
+              <ul class="wide">
+                <li><a href="/wiki/index.php/Collectd-web">Collectd-web</a>
+                (<a href="http://wiki.github.com/httpdss/collectd-web/">Homepage</a>)<br />
+                Web-based graphing front-end using JavaScript and a modified version of <em>collection&nbsp;2</em>.
+                <div class="code">git://github.com/httpdss/collectd-web.git</div>
+                </li>
+
+                <li><a href="/wiki/index.php/CollectGraph">CollectGraph</a>
+                (<a href="http://moinmo.in/MacroMarket/CollectGraph">Homepage</a>)<br />
+                Macro for the <a href="http://moinmo.in/">MoinMoin wiki</a> that displays graphs using
+                <acronym title="Round Robin Database">RRD</acronym> files created and filled by
+                <span class="collectd">collectd</span>.</li>
+
+                <li><a href="/wiki/index.php/EcoStats">EcoStats</a>
+                (<a href="http://code.google.com/p/ecostats/">Homepage</a>)<br />
+                Web-based, near-realtime statistics display by Sergiusz Pawłowicz, using tables and numerical values that are
+                updated without page reload using JavaScript, a CGI script and the
+                <a href="/documentation/manpages/collectd-unixsock.5.shtml">unixsock plugin</a>. When moving your mouse over a
+                value, a floating graph is loaded and displayed. A <a href="http://pawlowicz.name/MyServers">live sample</a>
+                is available.</li>
+
+                <li><a href="http://graphite.wikidot.com/">Graphite</a><br />
+                Graphite is a storage and visualization solution for numeric time-series data.
+                You can configure <span class="collectd">collectd</span> to send data to it using the
+                <a href="/wiki/index.php/Plugin:Write_Graphite">Write&nbsp;Graphite</a> plugin.
+                </li>
+
+                <li><a href="/wiki/index.php/Heymon">Heymon</a>
+                (<a href="http://github.com/newobj/heymon">Homepage</a>)<br />
+                Web-based <em>Ruby on Rails</em> application for graphing RRD files created by
+                <span class="collectd">collectd</span>.
+                <div class="code">git://github.com/newobj/heymon.git</div>
+                </li>
+
+                <li><a href="/wiki/index.php/Kcollectd">kcollectd</a>
+                (<a href="http://www.forwiss.uni-passau.de/~berberic/Linux/kcollectd.html">Homepage</a>)<br />
+                A X&nbsp;frontend to the RRD&nbsp;files created by <span class="collectd">collectd</span>. It uses KDE/Qt,
+                hence the name.</li>
+
+                <li><a href="http://librato.com/">Librato</a><br />
+                Hosted metric storage, visualization and alerting solution. Check out the
+                <a href="https://github.com/librato/collectd-librato">collectd-librato</a> project on <em>Github</em>.
+                </li>
+
+                <li><a href="/wiki/index.php/Visage">Visage</a>
+                (<a href="http://auxesis.github.com/visage/">Homepage</a>)<br />
+                Web-based graphing frontend for RRD-files written by <span class="collectd">collectd</span>. The data is
+                exported via <acronym title="JavaScript Object Notation">JSON</acronym> and graphed in the web browser
+                using <a href="http://raphaeljs.com/">Raphaël</a>. There's a short introduction of Visage in
+                <a href="http://holmwood.id.au/~lindsay/2009/09/08/graphing-collectd-statistics-in-the-browser-with-visage/">Lindsay's
+                  blog</a>.
+                <div class="code">git://github.com/auxesis/visage.git</div>
+                </li>
+
+                <li><a href="http://github.com/DavidS/module-collectd/tree/development">Module for Puppet</a><br />
+                <a href="http://reductivelabs.com/projects/puppet/">Puppet</a>, a configuration management solution, can
+                manage <span class="collectd">collectd</span>'s configuration files, thanks to funding by
+                <a href="http://neotactics.com/">neoTactics</a>. The source code is available from:
+                <div class="code">git://github.com/DavidS/module-collectd.git</div>
+                </li>
+
+                <li><a href="http://github.com/astro/ruby-collectd/">ruby-collectd</a><br />
+                A <em>Ruby</em> implementation of the <span class="collectd">collectd</span> network protocol, written by
+                <em>Astro</em>. This allows to send statistics from a Ruby script with a native interface. The source code is
+                available from:
+                <div class="code">git://github.com/astro/ruby-collectd.git</div>
+                </li>
+
+                <li><a href="http://github.com/astro/erlang-collectd/">erlang-collectd</a><br />
+                An <em>Erlang</em> implementation of the <span class="collectd">collectd</span> network protocol, written by
+                <em>Astro</em>. This allows to send statistics from an Erlang application to a
+                <span class="collectd">collectd</span> server. The source code is available from:
+                <div class="code">git://github.com/astro/erlang-collectd.git</div>
+                </li>
+
+                <li><a href="http://support.hyperic.com/display/hypcomm/jcollectd">jcollectd</a><br />
+                A pure-Java implementation of the <span class="collectd">collectd</span> network protocol, written by Doug
+                MacEachern of <a href="http://www.hyperic.com/">Hyperic, Inc</a>. It can be used as an MBean sender, sending
+                information about a running Java application to a <span class="collectd">collectd</span> server, and as an
+                MBean receiver, receiving data sent by an <span class="collectd">collectd</span> client.<br />
+                The <a href="http://github.com/hyperic/jcollectd">source code</a> is available from:
+                <div class="code">git://github.com/hyperic/jcollectd.git</div>
+                </li>
+
+                <li><a href="http://labs.omniti.com/trac/reconnoiter">Reconnoiter</a><br />
+                A distributed monitoring system marrying fault detection and trending. It features a
+                <a href="http://labs.omniti.com/docs/reconnoiter/config.noitd.modules.html"><em>collectd</em>
+                  module</a> which can be used to monitor the existence of a <em>collectd</em> client on the monitored
+                host.</li>
+
+                <li><a href="https://github.com/Nexinto/collectd">Splunk Enterprise &ndash; collectd app</a>
+                (<a href="https://splunkbase.splunk.com/app/2875/">splunkbase</a>)<br />
+                <em>Splunk Enterprise</em> is a solution for indexing, analysing and presenting all sorts of data. The
+                <em>collectd app</em> by Nexinto adds a dashboard for system metrics (CPU, memory, disk, …). Licensed
+                under the Apache License 2.0.
+                </li>
+              </ul>
+
+              <h3>Articles / Blog entries</h3>
+              <ul class="wide">
+                <li>An unknown author at <a href="http://neotactics.com/blog/">neoTactics</a> is happy about
+                <span class="collectd">collectd</span> in general and
+                <a href="http://support.hyperic.com/display/hypcomm/jcollectd">jcollectd</a> in particular in
+                <a href="http://neotactics.com/blog/technology/hyperic-clued-on-cloud-monitoring">“Hyperic Clued on Cloud
+                  Monitoring”</a>.</li>
+
+                <li><a href="http://www.johnmwillis.com/">John M. Willis</a> has mentioned
+                <span class="collectd">collectd</span> as one of the <em>“Best Monitoring Tools in the Clouds”</em> in his
+                <a href="http://www.johnmwillis.com/cloudies/the-2008-cloudies-awards/">“2008 Cloudies Awards”</a> blog
+                entry.</li>
+
+                <li>The german <a href="http://www.linux-magazin.de/">Linux-Magazin</a> has written a short
+                <a href="http://www.linux-magazin.de/news/systems_2008_collectd_zur_performance_analyse_im_cloud_computing">report
+                  about our stay at the SYSTEMS 2008</a> (in german).</li>
+                <li><a href="http://monkeyiq.blogspot.com/">Ben Martin</a> has written an
+                <a href="http://www.linux.com/feature/151982">article about projects for collecting system statistics</a>
+                published on <em>linux.com</em>. Among other projects it mentions <span class="collectd">collectd</span>.</li>
+
+                <li><a href="http://bethesignal.org/blog/2008/04/24/smooth-upgrade-to-ubuntu-804-lts-on-my-linode/">Jeff
+                  Waugh</a> is happy about <span class="collectd">collectd</span> on Ubuntu&nbsp;8.04.<br />
+                Later, he wrote a
+                <a href="http://bethesignal.org/blog/2009/04/06/replacing-apache-with-nginx-for-static-file-serving/">blog
+                  entry</a> which demonstrates how the data collected by <span class="collectd">collectd</span> can be used to
+                optimize a web-server setup.<br />
+                He also demonstrates
+                <a href="http://bethesignal.org/blog/2009/07/22/watching-nginx-upstreams-with-collectd/">how to monitor
+                  FastCGI</a> using the <a href="/wiki/index.php/Plugin:Tail">Tail plugin</a>.
+                </li>
+
+                <li><a href="http://www.hps.com/~tpg/notebook/collectd.php">Terry Gliedt</a>
+                uses <span class="collectd">collectd</span> to monitor a cluster at University of Michigan.</li>
+
+                <li><a href="http://astroblog.spaceboyz.net/">Astro</a> has written <a
+                  href="http://blog.superfeedr.com/OSS/collectd/infrastructure/open-source/performance-monitoring-with-collectd/">an
+                  introductory article</a> about <span class="collectd">collectd</span> on the <em>Superfeedr</em> blog.</li>
+
+                <li><em>Jordan Sissel</em> has included <em>collectd</em> in his sysadmin advent calendar,
+                <a href="http://sysadvent.blogspot.com/2009/12/day-21-collectd.html">sysadvent</a>, 2009.</li>
+              </ul>
+
+              <h3>Projects using <span class="collectd">collectd</span></h3>
+              <ul class="wide">
+                <li><a href="http://ovirt.org/">oVirt</a>
+                is a management console for virtual guest systems, including statistics. It's developed by
+                <a href="http://et.redhat.com/">RedHat's Emerging Technologies group</a>.</li>
+                <li><a href="http://luci.freifunk-halle.net/About">LuCI</a>, a web-based configuration frontend for embedded
+                devices, can display statistics collected by <span class="collectd">collectd</span>. There is a
+                <a href="http://luci.freifunk-halle.net/WebUI/Screenshots/Administration?action=AttachFile&do=view&target=stat-iface.png">screenshot</a>
+                of the statistics in <a href="http://openwrt.org/">OpenWrt</a>, which uses LuCI as its web-frontend.</li>
+              </ul>
+
+              <h3>Other users of <span class="collectd">collectd</span></h3>
+              <ul class="wide">
+                <li><a href="http://www.stackdriver.com/">Stackdriver</a> is using
+                <span class="collectd">collectd&nbsp;5</span> as its agent to monitor AWS EC2 nodes.</li>
+                <li><a href="http://rightscale.com/">RightScale Inc.</a>
+                use <span class="collectd">collectd</span> on <a href="http://aws.amazon.com/ec2">Amazon EC2</a> nodes.</li>
+                <li>The <a href="http://bbc.co.uk/"><acronym title="British Broadcasting Corporation">BBC</acronym></a>
+                is collecting statistics from more than 200&nbsp;servers.</li>
+                <li><a href="http://noris.net/">noris network AG</a> collects performance data from own and hosted servers as
+                well as a wide variety of network equipment using the SNMP plugin.</li>
+                <li><a href="http://neotactics.com/">neoTactics</a> use <span class="collectd">collectd</span> in their cloud
+                management framework <a href="http://neotactics.com/cloudscale/">CloudScale</a>. They have sponsored the
+                development of a module which allows configuring <span class="collectd">collectd</span> with <a
+                  href="http://reductivelabs.com/projects/puppet/">Puppet</a>, a configuration management solution. See the
+                announcements in <a href="http://neotactics.com/blog/technology/cloudscale-updates-more/">neoTactics' blog</a>
+                and on the
+                <a href="http://groups.google.com/group/puppet-users/browse_thread/thread/cc9a6d612e7bd3ae">puppet-users
+                  mailing list</a>. Thanks&nbsp;:)</li>
+              </ul>
+
+              <h3>Similar projects</h3>
+              <p>The following is a list of projects similar to <span class="collectd">collectd</span> and a short note on how
+              they differ from <span class="collectd">collectd</span>. Projects that focus on monitoring and do some
+              performance measurement on the side are not on this list. It's easy to find extensive lists of such (monitoring)
+              tools on the web, though.</p>
+              <ul class="wide">
+                <li><a href="http://ganglia.info/">Ganglia</a><br />
+                Focus on compute clusters and basic system statistics.</li>
+                <li><a href="http://munin.projects.linpro.no/">Munin</a><br />
+                Data is collected by forking&nbsp;/ executing plugins (i.&nbsp;e. scripts).</li>
+                <li><a href="https://github.com/etsy/statsd/">StatsD</a><br />
+                Written in JavaScript for <em>Node.js</em>; optimized towards counting events and submitting aggregated
+                counts, e.g. to <em>Graphite</em>. See also the <a href="/wiki/index.php/Plugin:StatsD">StatsD
+                  plugin</a>.</li>
+                <li><a href="http://steph.eluna.org/eluna_graph_system.html">eLuna Graph System</a><br />
+                Written in Perl; relies on cron; local system only.</li>
+                <li><a href="http://www.monitorix.org/">Monitorix</a><br />
+                Written in Perl; network support using HTTP (web server and CGI on client).</li>
+                <li><a href="http://openssi-webview.sourceforge.net/">openSSI webView</a><br />
+                Specialized solution for <a href="http://openssi.org/">openSSI</a> clusters; written in Perl.</li>
+                <li><a href="http://www.tnpi.biz/internet/manage/rrdutil/">RRDutil</a><br />
+                Written in Perl, relies on cron and SNMP.</li>
+                <li><a href="http://collectl.sourceforge.net/">collectl</a><br />
+                Written in Perl; monolithic structure; designed for realtime viewing in the console.</li>
+              </ul>
+{{template "footer.shtml"}}
+<!-- vim: set sw=2 sts=2 ts=8 et tw=120 : -->

@@ -1,0 +1,95 @@
+{{template "header.shtml" .}}
+              <h1>Documentation</h1>
+
+              <p><span class="collectd">collectd</span>'s documentation consists primarily of the manpages that come
+              with the daemon, accompanied with some special documents on certain aspects. A more generic source of
+              information is the file
+              <a href="http://git.verplant.org/?p=collectd.git;a=blob;hb=master;f=README"><code>README</code></a> that's
+              included in the source tarball. Also, some more specialized documentation, including a
+              <a href="/wiki/index.php/First_steps">getting started guide</a>, can be found below.</p>
+
+              <h2 id="manual_pages">Manual pages</h2>
+              <p>The manpages, that come with the daemon, are provided here in HTML form for your convenience. Since
+              converting them to HTML format is not fully automatic they may be a little outdated here. If in doubt,
+              please refer to the manpages that come with the distribution.</p>
+              <ul>
+                <li><a href="/documentation/manpages/collectd.1.shtml"><code>collectd(1)</code></a></li>
+                <li><a href="/documentation/manpages/collectdmon.1.shtml"><code>collectdmon(1)</code></a></li>
+                <li><a href="/documentation/manpages/collectd.conf.5.shtml"><code style="font-weight: bold;">collectd.conf(5)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-email.5.shtml"><code>collectd-email(5)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-exec.5.shtml"><code>collectd-exec(5)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-nagios.1.shtml"><code>collectd-nagios(1)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-perl.5.shtml"><code>collectd-perl(5)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-python.5.shtml"><code>collectd-python(5)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-java.5.shtml"><code>collectd-java(5)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-snmp.5.shtml"><code>collectd-snmp(5)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-tg.1.shtml"><code>collectd-tg(1)</code></a></li>
+                <li><a href="/documentation/manpages/collectd-unixsock.5.shtml"><code>collectd-unixsock(5)</code></a></li>
+                <li><a href="/documentation/manpages/types.db.5.shtml"><code>types.db(5)</code></a></li>
+              </ul>
+
+              <h2>collectd Wiki</h2>
+              <p>In order to make it easier to contribute documentation, we have moved some of the documentation into a
+              wiki. You can switch to the wiki (and back to the homepage) using the buttons in the upper right corner of
+              the site. Or follow this link:</p>
+              <ul>
+                <li><a href="/wiki/">collectd Wiki</a></li>
+              </ul>
+
+              <h2>Special documentation</h2>
+              <p>The following documentation describes some special aspects of the daemon.</p>
+              <ul>
+                <li><a href="/wiki/index.php/First_steps">First steps with collectd</a></li>
+                <li><a href="/wiki/index.php/Networking_introduction">Networking introduction</a></li>
+                <li><a href="/wiki/index.php/Inside_the_RRDtool_plugin">Inside the RRDtool plugin</a></li>
+                <li><a href="/wiki/index.php/Notifications_and_thresholds">Notifications and thresholds</a></li>
+                <li><a href="/wiki/index.php/Chains">Introduction to <em>chains</em></a>,
+                <span class="collectd">collectd</span>'s filtering mechanism.</li>
+                <li><a href="/wiki/index.php/V3_to_v4_migration_guide">collectd v3 to v4 migration guide</a></li>
+                <li><a href="/dev-info.shtml">General development information and documentation</a></li>
+                <li><a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs.html">How to Report Bugs Effectively</a></li>
+              </ul>
+
+              <h2>Reference documentation</h2>
+              <p>A lot of projects refer to their technical documentation under &quot;reference documentation&quot;. If
+              you're looking for that, please read the <a href="#manual_pages">manual pages</a> above. We provide links
+              to specific parts of our documentation here.</p>
+              <dl>
+                <dt><a href="http://git.verplant.org/?p=collectd.git;a=blob;hb=master;f=README">Plugins</a></dt>
+                <dd>A list of all plugins, together with a short description for each, can be found in the
+                <a href="http://git.verplant.org/?p=collectd.git;a=blob;hb=master;f=README"><code>README</code></a>
+                file included in the source code distribution.<br />
+                There's also the <a href="/wiki/index.php/Table_of_Plugins">Table of Plugins</a> wiki page.</dd>
+
+                <dt><a href="http://git.verplant.org/?p=collectd.git;a=blob;hb=master;f=README">Libraries / Dependencies</a></dt>
+                <dd>A list of all supported libraries and which plugins make use of each library is documented in the
+                <a href="http://git.verplant.org/?p=collectd.git;a=blob;hb=master;f=README"><code>README</code></a> file under
+                &quot;Prerequisites&quot;.</dd>
+
+                <dt><a href="/documentation/manpages/collectd.conf.5.shtml">Configuration options</a></dt>
+                <dd>All configuration options, both, for the server and for all plugins, are documented in
+                <a href="/documentation/manpages/collectd.conf.5.shtml"><code>collectd.conf(5)</code></a>.</dd>
+
+                <dt><a href="http://git.verplant.org/?p=collectd.git;a=blob;hb=master;f=AUTHORS">Contributors</a></dt>
+                <dd>A list of all contributors can be found in the file
+                <a href="http://git.verplant.org/?p=collectd.git;a=blob;hb=master;f=AUTHORS"><code>AUTHORS</code></a>
+                included in the source code distribution.</dd>
+              </dl>
+
+              <h2>Help writing documentation!</h2>
+              <p>Writing documentation is, along with reporting bugs, an easy and very much appreciated way of
+              contributing to an open source project. You can do this without any coding skills whats-o-ever and
+              everybody will benefit from it&nbsp;- users and developers alike. If you have written something up, or
+              plan to, <a href="/contact.shtml">let us know</a>&nbsp;:)</p>
+
+              <h2>External documentation</h2>
+              <p>The following documentation has been found on the web or has been submitted by users.</p>
+              <ul>
+                <li><a href="http://wiki.rightscale.com/2._References/01-RightScale/01-RightScale_Dashboard/04-General_Topics/Monitoring_System"
+                  >&quot;Overview of the Monitoring System&quot;</a> in the
+                <a href="http://www.rightscale.com/">RightScale</a> wiki</li>
+                <li><a href="http://wiki.monitoring-fr.org/nagios/integration/collectd">Entry &quot;collectd&quot;</a> in the
+                <a href="http://wiki.monitoring-fr.org/">monitoring-fr.org wiki</a> (french)</li>
+              </ul>
+{{template "footer.shtml"}}
+<!-- vim: set sw=2 sts=2 ts=8 et tw=120 : -->

@@ -1,0 +1,370 @@
+{{template "header.shtml" .}}
+              <h1>Frequently asked questions</h1>
+
+              <p>These are <em>real</em> frequently asked questions, not some questions we though of while sitting by
+              ourselves and having a glass of wine. As a consequence, the questions are sometimes very specific and the
+              answers sometimes require some knowledge about advanced topics. If you're looking for stuff like
+              &quot;What does <span class="collectd">collectd</span> do?&quot; or &quot;How do I enable plugin
+              <em>foo</em>?&quot;, please go to the appropriate place, for example the
+              <a href="/documentation.shtml">documentation</a> page.</p>
+
+              <ul class="faq">
+                <li id="faq:diagnostic_output"><div class="question">It doesn't work. Where can I find diagnostic output?</div>
+		<div class="answer">In order to get any output at all, you need to load a <em>log plugin</em>. The two
+			main log plugins are the <a href="/wiki/index.php/Plugin:LogFile">LogFile</a> and
+			<a href="/wiki/index.php/Plugin:SysLog">SysLog</a> plugins. We recommend that loading one of
+			those plugins is the <em>first</em> thing you do in your config file, i.e. put the
+			<code>LoadPlugin</code> line at the very top.<br />
+			If no <em>log plugin</em> is loaded, <span class="collectd">collectd</span> will write to
+			<code>STDERR</code>. After the daemon has forked to the background, you won't be able to see
+			this output anymore, though.
+                </div></li>
+
+                <li><div class="question">I try to use the <a href="/plugins/ping.shtml"><code class="plugin">ping</code>-plugin</a>,
+                  but keep getting the message &quot;<code>`ping_host_add' failed.</code>&quot;. What's the matter?</div>
+                <div class="answer">In order to generate ICMP packets one needs
+                  to open a so called &quot;RAW socket&quot;. On most UNIX
+                  systems only the superuser (root) may open such sockets.<br />
+                  In addition, some virtualization environments, such as <a
+                    href="http://linux-vserver.org/">VServer</a> and <a
+                    href="http://www.sun.com/bigadmin/content/zones/">Solaris
+                    Zones</a> have been reported to cause some trouble.</div></li>
+
+                <li><div class="question">Who receives the multicast traffic?</div>
+		<div class="answer">
+			I don't know. That entirely depends on your network setup. By default
+			<span class="collectd">collectd</span> uses &quot;site local&quot; addresses, that should not be
+			routed to outside your <acronym title="Autonomous system">AS</acronym>. If that's really the
+			case is up to you.
+		</div></li>
+
+                <li><div class="question">How do I use <code>--with-librrd</code>?</div>
+		<div class="answer">If you installed libraries in a non-standard (or non-system) path you need to
+			specify them when running the <code>configure</code> script. Otherwise it will not find them and
+			build the binaries without linking against the library.<br />
+			You need to set the <code>PATH</code> as given to the <code>--prefix</code> option when
+			compiling the library. The script actually looks for the two subdirectories
+			<code>PATH/include</code> and <code>PATH/lib</code>, so check for their existence if things
+			don't work. If, for example, you installed RRDTool in <code>/opt/rrdtool-x.y.z</code> you need
+			to run <code>configure</code> like this:
+			<div class="code">$&nbsp;./configure --with-librrd=/opt/rrdtool-x.y.z</div>
+                </div></li>
+
+                <li id="faq:version_numbers"><div class="question">
+                  What do the version numbers mean?
+                </div>
+                <div class="answer">
+                  The version numbers consist of three numbers: The
+                  <strong>major-</strong> and <strong>minor-</strong>number
+                  and the <strong>patchlevel</strong>.
+                  <ul>
+                    <li>Versions with different <strong>major-numbers</strong>
+                    are basically not compatible. This means that the
+                    definitions of RRD-files or config-options have been
+                    changed or, in general, that the user has to do something
+                    in addition to install the new version. This is not nice
+                    and avoided when possible, but sometimes necessary to
+                    prevent old mistakes to become ancient mistakes. We try to
+                    provide migration scripts, though, to make a switch as
+		    easy as possible. See the
+		    <a href="/wiki/index.php/V4_to_v5_migration_guide">V4 to v5 migration guide</a>
+		    for details.</li>
+                    <li>Versions with differing <strong>minor-numbers</strong>
+		    are backwards compatible, i.e. you can replace the lower
+		    version with the higher one and everything should still
+		    work. This means that features are added, but not removed
+		    or changed and that the default behavior does not
+		    change.</li>
+                    <li>Versions with different <strong>patchlevels</strong>
+                    are both, forward- and backwards-compatible, because no
+                    new features have been introduced. The only difference
+                    between the two versions is one or more bugfixes, so you
+                    should generally install the higher version of the
+                    two.</li>
+                  </ul>
+                </div></li>
+
+                <li id="faq:enable_plugin">
+                <div class="question">
+                  I enabled the <em>foo</em> plugin using <code>--enable-<em>foo</em></code> but now the build
+                  process fails. What's wrong?
+                </div>
+                <div class="answer">
+                  Frankly, this is the expected behavior. The <code>confgure</code> script tries hard to determine which
+                  libraries are installed and what compiler and linker flags are required to build applications that use
+                  that library. Based on those results those plugins whose dependencies are met will be enabled &ndash;
+                  all other plugins will be disabled.<br />
+
+                  So, if a plugin is displayed as disabled, its dependencies are not met. The normal way to get a
+                  plugin compiled is to install the missing dependencies and re-run the <code>configure</code>
+                  script.<br />
+
+                  You can <strong>force</strong> it to be build using <code>--enable-<em>foo</em></code>, but you need
+                  to know exactly what you are doing. If you do this you're out in the dark, cold woods and totally on
+                  your own!
+                </div></li>
+
+                <li id="faq:missing_dependency">
+                <div class="question">
+                  I installed the <em>Debian</em> package of <span class="collectd">collectd</span>. Now I get the error
+                  “lt_dlopen (<em>foo.so</em>) failed: file not found” &ndash; but the file exists!
+                </div>
+                <div class="answer">
+                  The <em>Debian</em> and <em>Ubuntu</em> packages of <span class="collectd">collectd</span> contain all
+                  plugins that are available for the platform you're using. However, they <em>do&nbsp;not</em> contain a
+                  <em>Dependency</em> on all required libraries for all plugins, because that would be
+                  <em>a&nbsp;lot</em> of packages. In all likelihood you're missing one of the required
+                  libraries.<sup><small>[*]</small></sup> Take a look at the file
+                  <code>/usr/share/doc/collectd-core/README.Debian.plugins</code> which lists all the required packages
+                  for each plugin. You can also use
+                  <div class="code">ldd /usr/lib/collectd/<em>foo.so</em></div>
+                  to figure out which shared object is missing and go from there.<br />
+                  <small>[*] Yes, the error message “file not found” is very confusing. It is an automatically
+                    stringyfied version of the error code returned by <code>lt_dlopen()</code>. Versions of
+                    <span class="collectd">collectd</span> that were released after February 2011 contain a more
+                    detailed error message for this case.</small><br />
+                  <br />
+                  The intuitive way of organizing the <span class="collectd">collectd</span> package would be to put
+                  plugins with special dependencies in separate packages which have a dependency on the library that's
+                  required for the plugin. Unfortunately, consensus in the <em>Debian</em> community was that this would
+                  create too many packages. All the dependencies are listed in a field called <em>Recommendation</em>
+                  which is a sort of soft dependency. Since <em>Recommendations</em> are installed in the default
+                  setting of APT, this way is deemed good enough for the average user.
+                </div></li>
+
+                <li id="faq:static_libs">
+                <div class="question">
+                  The build process fails with &quot;relocation R_X86_64_32 against `a local symbol' can not be used
+                  when making a shared object; recompile with -fPIC&quot;. What's wrong?
+                </div>
+                <div class="answer">
+                  Many plugins have to be linked against libraries. A few of them (currently
+                  <a href="/plugins/iptables.shtml"><code>iptables</code></a>,
+                  <a href="/plugins/netlink.shtml"><code>netlink</code></a> and
+                  <a href="/plugins/nut.shtml"><code>nut</code></a> are known to be affected)
+                  link against libraries that are only available as
+                  &quot;<a href="http://users.actcom.co.il/~choo/lupg/tutorials/libraries/unix-c-libraries.html">static libraries</a>&quot;
+                  in many distributions. Most distributions (e.&nbsp;g. Debian and SuSE GNU/Linux) do not compile
+                  static libraries with the &quot;-fPIC&quot; option. Thus they cannot be linked with shared
+                  objects compiled with &quot;-fPIC&quot;. Some architectures (among them i386) do not seem to
+                  care about that and handle it in some (probably magic) way. However, other architectures (mostly
+                  64bit like amd64 or hppa) cannot handle that and thus the compiler aborts with the error message
+                  mentioned above.<br />
+                  To fix this issue, you need a version of the static library compiled with &quot;-fPIC&quot; (or
+                  a shared library). Ask your distributor to provide a suitable version of the library or compile
+                  it yourself.<br />
+                  For more detailed information please refer to:
+                  <ul>
+                    <li><a href="http://www.gentoo.org/proj/en/base/amd64/howtos/index.xml?part=1&amp;chap=3">the
+                      gentoo documentation</a>,</li>
+                    <li><a href="http://bugs.debian.org/358637">Debian Bug #358637</a></li>
+                    <li><a href="http://bugs.debian.org/419684">Debian Bug #419684</a></li>
+                    <li><a href="http://bugs.debian.org/430933">Debian Bug #430933</a></li>
+                  </ul>
+                </div></li>
+
+                <li id="faq:solaris_32bit">
+                <div class="question">
+                  Solaris support is broken! The build aborts! Help!
+                </div>
+                <div class="answer">
+                  Versions <strong>4.4.5</strong> and <strong>4.5.2</strong> include fixes in the build system
+                  so the problems described below should be handled much more gracefully now.<br />
+                  There are two known issues with Solaris, but both can be fixed relatively easy:<br />
+                  If you build a 32bit binary, the configure script will (try to) enable
+                  <acronym title="Large File Support">LFS</acronym>. This will result in an error which looks
+                  somehow like this:
+                  <div class="code">
+                    config.h:832:1: error: &quot;_FILE_OFFSET_BITS&quot; redefined
+                  </div>
+                  Also, the <code>swap</code>-plugin has some problems of it's own with this:
+                  <div class="code">
+                    swap.c:197: warning: implicit declaration of function 'swapctl'<br />
+                    swap.c:197: error: 'SC_AINFO' undeclared (first use in this function)
+                  </div>
+                  The problem is that Solaris' swap interface is not available to 32bit applications.
+                  The solution is to <strong>build a 64bit binary</strong>! If you build a 64bit binary,
+                  <acronym title="Large File Support">LFS</acronym> is not needed and the swap plugin works as
+                  intended. To do this, pass the <code>-m64</code>&nbsp;flag to the compiler (assuming you're
+                  using the Sun C&nbsp;compiler).<br />
+                  Another problem is that by default Sun defines a version of <code>getgrnam_r</code> that isn't
+                  POSIX-compatible. To enable POSIX-compatibility pass the <code>_POSIX_PTHREAD_SEMANTICS</code>
+                  define to the compiler. This define is set automatically in versions 4.4.5, 4.5.2 and
+                  later.<br />
+                  Putting all together you need to pass the following flags to the <code>configure</code>-script:
+                  <div class="code">
+                    <span class="comment"># Sun CC</span><br />
+                    $ ./configure CFLAGS=&quot;-m64 -mt -D_POSIX_PTHREAD_SEMANTICS&quot;
+                  </div>
+                  Please note that we only test the <a href="http://developers.sun.com/sunstudio/">Sun
+                    C&nbsp;compiler</a> ourselves, but <a href="http://gcc.gnu.org/">GCC</a> may work, too.
+                  When using the GCC you need to substitute the <code>-mt</code> flag with the
+                  <code>-pthreads</code> flag. So if you use GCC the above invokation of <code>./configure</code>
+                  becomes:
+                  <div class="code">
+                    <span class="comment"># GCC</span><br />
+                    $ ./configure CFLAGS=&quot;-m64 -pthreads -D_POSIX_PTHREAD_SEMANTICS&quot;
+                  </div>
+                  Thanks to <em>Christophe Kalt</em> for sharing his insights&nbsp;:)
+                </div></li>
+
+                <li id="faq:split_up_data_sets">
+                <div class="question">
+                  Why do many plugins, for example the <em>CPU plugin</em>, split related metrics accross so many files?
+                  Can I change that?
+                </div>
+                <div class="answer">
+                  The <strong>short answer</strong> is:
+                  We do this in order to be able to provide strict backwards compatibility.
+                  Writing all the details to a single file is not possible;
+                  for the <em>CPU plugin</em>, set the <code>ReportByState</code> and <code>ReportByCpu</code> options
+                  to <code>false</code> for an aggregated output.<br />
+
+                  The <strong>long answer</strong> and explanation of the short answer is:
+                  <span class="collectd">collectd</span> runs on a variety of operating systems. Each operating
+                  system has it's own method for accounting CPU states, memory consumption, swap usage, and so on.
+                  If all these data sources where in one data&nbsp;set, every new supported operating system or
+                  any addition to an already supported operating system would mean that we need to modify the
+                  data&nbsp;set. This cannot be done without breaking backwards compatibility.<br />
+                  To give you a few examples: Sometime in mid-<code>2.6</code> the Linux kernel added some
+                  Xen-patches which provided a new CPU state: &quot;steal time&quot;. When adding support for BSD
+                  systems we had to add &quot;wired&quot; memory. NFSv4 added some new procedures that NFSv3
+                  didn't have, etc&nbsp;pp.<br />
+                  Changing the layout of the data is not just a matter of changing the <code>types.db</code> file.
+                  That file describes the layout of the data submitted by plugins. The plugins don't need
+                  it&nbsp;- they know what data they submit. It's needed by the daemon and writing plugin to know
+                  how to store the data. If you mess with the file without knowing what you do, you will most
+                  likely end up with the data not being collected at all anymore.<br />
+                  Going forward, we intend to push the &ldquo;one data source per file&rdquo; rule even more and,
+                  eventually, make it the only supported mode of operation. If you are writing extensions for
+                  <em>collectd</em>, it would be best to bear this in mind.
+                </div></li>
+
+                <li id="faq:collection_cgi_incomplete">
+                <div class="question">
+                  Why doesn't <code>collection.cgi</code> draw <em>foo</em> graphs correctly?
+                </div>
+                <div class="answer">
+                  That script is meant as a starting point for own developments, not as a ready to use web
+                  frontend for RRD files written by <span class="collectd">collectd</span>.<br />
+                  It is just an example, because it's not really usable as it is. And it's not really useable,
+                  because we are UNIX developers and don't enjoy doing web stuff much. Working on the daemon is
+                  just so much more fun..&nbsp;;) So in the best of free&nbsp;/ open&nbsp;source traditions: Patches
+                  welcome!<br />
+                  There are alternatives, though. We've heard from various people using
+                  <a href="http://www.cacti.net/">Cacti</a> to render the graphs. Sergiusz Pawlowicz of the
+                  <a href="http://www.bbc.co.uk/"><acronym title="British Broadcasting Corporation">BBC</acronym></a>
+                  has written <a href="http://moinmo.in/MacroMarket/CollectGraph">CollectGraph</a>, a macro for
+                  the <a href="http://moinmo.in/">MoinMoin wiki</a>. And of course there's
+                  <a href="http://web.taranis.org/drraw/">drraw</a>.
+                </div></li>
+
+                <li id="faq:cpu_jiffies"><div class="question">Why don't the CPU states sum up to 100%?</div>
+                <div class="answer">By default, the <a href="/plugins/cpu.shtml">CPU plugin</a> does not collect the CPU
+                  usage in percent, but in <em>&quot;jiffies&quot;</em>. If you prefer a <em>percentage</em>, set the
+                  <code>ValuesPercentage</code> option to <code>true</code>.<br />
+                  A <em>jiffy</em> is the time-unit which the scheduler in the operating systems uses to manage run
+                  times of applications. Under Linux, the default configuration is to have 100 jiffies per second, which
+                  leads many users to believe they're getting a percentage. You can, however, configure your kernel at
+                  compile time to use 250 or 1000 jiffies per second, usually resulting in a more responsive system but
+                  IO-throughput is decreased. Especially on busy systems, virtual systems and systems with a
+                  <em>&quot;tickless kernel&quot;</em> there may not always be the exact number of intended
+                  jiffies in one second, resulting in the variance you've notice in the graphs.<br />
+                  That you see this issue in <span class="collectd">collectd</span> but not in other similar tools is,
+                  in many cases, due to the fact that <span class="collectd">collectd</span> collects data so
+                  frequently. Over the timespan of, say, five minutes these variations even out, but the alleged
+                  percentages are, in fact <em>jiffies</em>.
+                </div></li>
+
+                <li id="faq:network_encryption"><div class="question">Is network traffic encrypted or signed?</div>
+                <div class="answer">Yes, starting with <em>version 4.7.0</em> you can either sign the traffic using a
+                  <em>Hashed Message Authentication Code</em> (HMAC) or encrypt the traffic. Please refer to the
+                  <a href="/wiki/index.php/Plugin:Network">Network plugin wiki page</a> for details.
+                </div></li>
+
+                <li id="faq:value_too_old"><div class="question">I get frequent errors that a “value is too old”.
+                  What's this about?</div>
+                <div class="answer">The complete error message usually looks like this:
+                  <div class="code">
+                    [2009-05-06 14:03:05] uc_update: Value too old: name =
+                    device.domain.tld/snmp/frequency-output; value time = 1241611385; last cache update
+                    = 1241611385;
+                  </div>
+		  <br />
+                  When adding a new value to the internal cache, the timestamp on that value is
+                  checked against the timestamp on the last value with the same name that was added to the cache.
+                  The error message informs you, that the value already in the cache was newer or as new as the
+		  value that should have been added. In the example above, a value for
+		  <em>device.domain.tld/snmp/frequency-output</em> should be added, but the current timestamp
+		  <em>(1241611385)</em> is the same as the timestamp already present in the cache, i.e. a
+		  duplicate.<br />
+		  <br />
+		  The most common source of this is that somehow two values with the same <em>identifier</em> (name) are
+		  reported. One frequent reason for this is that two hosts report data using the same host name and send
+		  it to a central server. If the &ldquo;last cache update time&rdquo; increases with each message, this
+		  is very likely that case. You can use <a href="http://www.wireshark.org/">Wireshark</a> (1.4 or later)
+		  to analyze and filter the <span class="collectd">collectd</span> network traffic and find out from
+		  which IP addresses the duplicate values originate. The second most common reason is a misconfiguration
+		  of <em>generic plugins</em>, such as the <a href="/wiki/index.php/Plugin:SNMP">SNMP plugin</a>.<br />
+		  <br />
+		  A similar variant of the above problem is that the daemon is running <em>twice</em> on the same host.
+		  You can use the <code>ps</code> command to check if this is the case.<br />
+		  <br />
+		  These errors may also be caused by a plugin being loaded twice. You can check if each
+		  plugin is loaded only once by checking the <code>LoadPlugin</code> lines:
+		  <div class="code">
+		    grep -i LoadPlugin /etc/collectd/collectd.conf | egrep -v '^[[:space:]]*#' | sort | uniq -c
+		  </div>
+		  <br />
+		  Another common cause is that time on the client jumps backwards. This may happen due to a weekly
+		  <em>ntpdate</em> forcefully setting the time, for example. <em>Virtual hosts</em> often have problems
+		  providing a steady wallclock time, but usually they have jumps <em>forward</em> (causing gaps). It
+		  might be worth investigating nonetheless.
+                </div></li>
+
+                <!--
+                <li><div class="question">
+			The <a href="/wiki/index.php/Plugin:Apache">Apache plugin</a> reports the following error:
+			<code>apache: curl_easy_perform failed: Failed writing body</code>.
+			What's wrong?
+                </div>
+                <div class="answer">
+			The response received was too big and didn't fit into the buffer. Check the
+			<code>URL</code>-option in the configfile. Especially check that the URL ends in
+			&quot;<code>?auto</code>&quot;: <span class="collectd">collectd</span> requires the machine
+			readable output generated by the Apache-plugin <code>mod_status</code> and will not work with
+			anything else.<br />
+			Since versions <strong>4.2.7</strong> and <strong>4.3.3</strong>, both released April
+			22<sup>nd</sup> 2008, this buffer is increased dynamically and this error will no longer occur.
+                </div></li>
+                -->
+
+                <!--
+                <li id="faq:ignored_lines"><div class="question">Some lines of the config seem to be ignored…?</div>
+                <div class="answer">Yes, that's a known bug. You probably have
+                  one or more white spaces at the end of the lines being
+                  ignored.<br />
+                  This is a bug in the library used by <span
+                    class="collectd">collectd</span>&nbsp;<strong>3.*</strong>
+                  to parse the configfile. Versions <strong>4.0</strong> and
+                  later use a different library and don't have this
+                  problem.</div></li>
+                -->
+
+	  <!--
+                <li><div class="question">What does “Invalid value for config option `Mode': `Local'” mean?</div>
+                <div class="answer">It means that the mode &quot;Local&quot; is
+                  not available. Most likely the &quot;librrd&quot; library
+                  wasn't found. If you want to write to RRD-files install
+                  &quot;librrd&quot; or, if you already did that, use the
+                  <code>- -with-rrdtool</code> option of the
+                  <code>./configure</code>-script to point to the right
+                  direction.</div></li>
+	  -->
+
+                <!--
+                <li><div class="question"></div>
+                <div class="answer"></div>
+                -->
+              </ul>
+{{template "footer.shtml"}}

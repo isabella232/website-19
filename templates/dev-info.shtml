@@ -1,0 +1,42 @@
+{{template "header.shtml" .}}
+              <h1>Development Information</h1>
+
+              <h2 id="repository">Git repository</h2>
+              <p><span class="summary">The current development state is stored in a
+                <a href="http://git.verplant.org/?p=collectd.git;a=summary">Git repository</a>.</span><br />
+              The <em>Git repository</em> is also synched to <a href="https://github.com/">Github</a>. To check out the
+              latest development version use the following command.</p>
+
+              <div class="code">
+                <span class="comment"># Canonical repository</span><br />
+                git clone git://git.verplant.org/collectd.git<br />
+                <br />
+                <span class="comment"># Github mirror</span><br />
+                git clone git://github.com/collectd/collectd.git<br />
+              </div>
+
+              <p>After &quot;cloning&quot; the repository you will need to generate the automake and
+              autoconf files. You can do this using the <code>build.sh</code> script found in the root
+              directory of the repository.</p>
+
+              <h2>Bugtracking system</h2>
+              <p>We're using <a href="https://github.com/collectd/collectd/issues">GitHub issues</a> to keep track of
+              bugs. Feel free to open and discuss bugs there. You can conveniently link to issues using
+              <code>http://collectd.org/bugs/<span class="variable">num</span></code>.</p>
+
+              <h2>Development articles</h2>
+              <ul>
+                <li><a href="/wiki/index.php/Plugin_architecture">collectd's plugin architecture</a><br />
+                A technical overview of the functions that should be in a plugin and what they do.</li>
+                <li><a href="/wiki/index.php/Build_system">collectd's build system</a><br />
+                Some hints how you integrate a new plugin in the autotools-based build-system.</li>
+                <li><a href="/development/submitting-patches.shtml">Submitting patches</a><br />
+                A few words on how you best generate patches.</li>
+                <li><a href="/wiki/index.php/Coding_style">A few words on coding style</a><br />
+                A guidline to write, what we consider, &quot;good code&quot;.</li>
+                <li><a href="/wiki/index.php/Roadmap">Roadmap</a><br />
+                Some ideas of future development and a rough order in which we plan to implement them.</li>
+              </ul>
+
+{{template "footer.shtml"}}
+<!-- vim: set sw=2 sts=2 ts=8 et tw=120 : -->

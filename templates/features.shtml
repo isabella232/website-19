@@ -1,0 +1,161 @@
+{{template "header.shtml" .}}
+              <h1>Features</h1>
+
+              <h2>Modularity&nbsp;/ Portability</h2>
+              <div class="float right" style="background-color: white;">
+                <a href="/images/architecture-schematic.png"><img src="/images/architecture-schematic.small.png" /></a>
+                <div class="caption">collectd's architecture<br />(schematic overview)</div>
+              </div>
+              <p>Everything in <span class="collectd">collectd</span> is done in plugins. Well, except parsing the
+              configfile. This means that the main daemon doesn't have any external dependencies and should run on
+              nearly anything that has heard of POSIX. The daemon has been reported as working on Linux, Solaris,
+              Mac&nbsp;OS&nbsp;X, AIX, FreeBSD, NetBSD, and OpenBSD. It's likely that other UNIX flavors work to some
+              extend, too.</p>
+              <p>Support for <em>Microsoft Windows</em> is provided by <a href="http://ssc-serv.com">SSC&nbsp;Serv</a>,
+              a native Windows service that implements <span class="collectd">collectd</span>'s network protocol.</p>
+
+              <h2 style="clear: left;">Reasonable defaults</h2>
+              <p><span class="collectd">collectd</span>'s configuration is kept as easy as possible: Besides which
+              modules to load you don't <em>need</em> to configure anything else, but you can customize the daemon to
+              your liking if you want.</p>
+
+              <h2>High-resolution statistics</h2>
+              <p>In contrast to most similar software, <span class="collectd">collectd</span> is not a script but
+              written in plain&nbsp;C for performance and portability. As a daemon it stays in memory, so there is no
+              need to start up a heavy interpreter every time new values should be logged. This allows
+              <span class="collectd">collectd</span>  to have a 10&nbsp;second default resolution while being nice to
+              the system. It runs on small embedded WLAN routers with <a href="http://openwrt.org/">OpenWrt</a> without
+              much impact on the CPU. The result are very high resolution graphics. The sample graph gives you an idea
+              of the detail you can expect. Please note that this is a ten-minute sample!</p>
+
+              <h2>Sophisticated network code</h2>
+              <p><span class="collectd">collectd</span> utilizes a <strong>data push model</strong>, i.e.  the
+              data is collected and sent (pushed) to a <a href="http://en.wikipedia.org/wiki/Multicast">multicast
+                group</a> or server. Thus there is no central instance which <em>queries</em> any values.</p>
+
+              <p>The <a href="/wiki/index.php/Plugin:Network">network code</a> can use the advanced network
+              technologies <a href="http://en.wikipedia.org/wiki/IPv6">IPv6</a> and
+              <a href="http://en.wikipedia.org/wiki/Multicast">Multicast</a>. But of course you can use
+              <span class="collectd">collectd</span> without any of this knickknack (i.e. IPv4 unicast&nbsp;;),
+              too. Since you can configure data transmission and reception separately, you can realize the following
+              setups easily (see the <a href="/wiki/index.php/Networking_introduction">networking introduction</a> for
+              more details):</p>
+              <ul>
+                <li><strong>No networking</strong>: If you don't load the <em>network plugin</em>, networking is
+                completely disabled. No sockets, no overhead, no problem.</li>
+
+                <li><strong>Multicast</strong>: Data can be sent to or received from a multicast group. This is the
+                easiest and most interesting solution if you have many &quot;clients&quot; and one or a few
+                &quot;servers&quot; on a local network. Using multicast is trivial: Simply enter a multicast address and
+                any &quot;server&quot; will automatically recognize it and join the specific group.</li>
+
+                <li><strong>Unicast</strong>: Of course you can simply send data to specific hosts only. This is mostly
+                interesting for scattered hosts&nbsp;&ndash; network wise.</li>
+
+                <li><strong>Proxy operation</strong>: An instance can be configured to forward the data it received over
+                the network. Using this you can forward the data received from a multicast group to a unicast address,
+                couple two distinct multicast groups without the need for (extra-AS) multicast routing and so on. Of
+                course, IPv4/IPv6 can be wildly mixed with this, too.</li>
+              </ul>
+
+              <p>The <a href="/wiki/index.php/Binary_protocol">network protocol</a> has been designed to be lightweight,
+              so data collection over slow network links isn't a problem. The protocol is extensible, so it's open for
+              new features in the future without breaking backwards compatibility.</p>
+
+              <p>Beginning with <a href="/wiki/index.php/Version_4.7">version 4.7</a>, the
+              <em>network plugin</em> offers <strong>cryptographic extensions</strong> to sign or encrypt network
+              traffic. Servers can be instructed to only accept signed or encrypted traffic, so that information cannot
+              be forged and, in case of encrypted data, read.</p>
+
+              <p>Using multicast can be thought of as “<strong>auto discovery</strong>”: The server doesn't (need to)
+              know what clients exists (it never does) and the clients don't need to know the server's IP-address. In
+              fact, they don't even know how many servers there are. You can think of it like radio communication: Once
+              set to the right channel you can receive all the data transmitted by some senders&nbsp;&ndash; no matter
+              what their position is.</p>
+
+              <h2>Custom extensions</h2>
+              <p>There is a variety of means by which you can extend the functionality of
+              <span class="collectd">collectd</span> to your needs:</p>
+              <ul>
+                <li><a href="/wiki/index.php/Table_of_Plugins">C-plugins</a>:
+                These plugins are compiled to shared objects and can be loaded by the daemon directly. These plugins
+                possibly have the longest development cycle, but it is the best performing and most elegant solution,
+                too.</li>
+
+                <li><a href="/wiki/index.php/Plugin:Perl">Perl-plugins</a>:
+                The <em>Perl</em> plugin includes a Perl-interpreter into the daemon which provides the C-interface to
+                Perl-modules. This makes it possible to write additions in Perl.
+                <a href="/documentation/manpages/collectd-perl.5.shtml"><code>collectd-perl(5)</code></a> has the juicy
+                details.</li>
+
+                <li><a href="/wiki/index.php/Plugin:Java">Java-plugins</a>:
+                The <em>Java</em> plugin includes a <em>Java Virtual Machine</em> (JVM) into the daemon and can load and
+                execute plugins in Java bytecode. The relevant parts of the API have been exported to Java, so that you
+                can write a wide variety of plugins in Java. More information is available in the
+                <a href="/documentation/manpages/collectd-java.5.shtml"><code>collectd-java(5)</code></a> manual
+                page.</li>
+
+                <li><a href="/wiki/index.php/Plugin:Python">Python-plugins</a>:
+                The <em>Python</em> plugin includes a Python-interpreter into the daemon which provides the C-interface to
+                Python-modules. This makes it possible to write additions in Python, analogically to the <em>Perl</em>
+                plugin.
+                <a href="/documentation/manpages/collectd-python.5.shtml"><code>collectd-python(5)</code></a> has the
+                juicy details.</li>
+
+                <li><a href="/wiki/index.php/Plugin:UnixSock">UNIX domain socket</a>:
+                The <em>UnixSock</em> plugin opens a UNIX socket to which you can connect and submit your values or
+                query collected values. For more information, take a look at the
+                <a href="/documentation/manpages/collectd-unixsock.5.shtml"><code>collectd-unixsock(5)</code></a> manual
+                page</li>
+
+                <li><a href="/wiki/index.php/Plugin:Exec">Execute binaries or scripts</a>:
+                Arguably the easiest and least performant solution. The <em>Exec</em> plugin forks a binary or script
+                which acquires the values somehow and writes them to standard output. See
+                <a href="/documentation/manpages/collectd-exec.5.shtml"><code>collectd-exec(5)</code></a> for
+                details.</li>
+
+                <li><strong>Java MBean support</strong>:
+                With <a href="https://github.com/hyperic/jcollectd">jcollectd</a> there is a pure-Java implementation of
+                the <span class="collectd">collectd</span> network protocol. This class can be used as an MBean sender,
+                allowing statistics about a Java program to be sent to a <span class="collectd">collectd</span> server,
+                and as an MBean receiver, to receive (and work with) data sent by a <span
+                  class="collectd">collectd</span> client.</li>
+              </ul>
+
+              <h2>Built to scale</h2>
+              <p><span class="collectd">collectd</span> is able to handle any number of hosts, from one to several
+              thousand. This is achieved by utilizing the resources as efficient as possible, e.g. by merging multiple
+              RRD-updates into one update operation
+              (see this <a href="/wiki/index.php/Inside_the_RRDtool_plugin">in-depth article</a>), merging the biggest
+              possible number of values into each one network packet and so on. The multithreaded layout allows for
+              multiple plugins to be queried simultaneously&nbsp;– without running into problems due to
+              IO-latencies.</p>
+
+              <h2>SNMP support</h2>
+              <p>The <em>Simple Network Management Protocol</em> (SNMP) is in widespread use with various network
+              equipment, for example switches, routers, rack monitoring systems, thermometers,
+              <acronym title="Uninterruptible Power Supply">UPS</acronym>es, and so on. The
+              <a href="/wiki/index.php/Plugin:SNMP">SNMP plugin</a> provides a generic interface to the SNM-protocol
+              which you can use to query values and dispatch them over <span class="collectd">collectd</span>'s
+              mechanisms, e.&nbsp;g. transmit them to a server instance somewhere else. Since devices one would query
+              using SNMP usually are embedded devices with not very much computing power, you can set the interval in
+              which data is gathered for each host individually. And since it may take a while for a timeout to occur or
+              the device may take a little while to answer a request, the hosts are queried in parallel using multiple
+              threads.</p>
+
+              <h2>Integration with monitoring solutions</h2>
+              <p>With version&nbsp;4.3 the concept of
+              <a href="/wiki/index.php/Notifications_and_thresholds">notifications and thresholds</a> has been added to
+              <span class="collectd">collectd</span>. This allows you to send notifications through the daemon and
+              allows for simple threshold checking. However, <span class="collectd">collectd</span> is <strong>not a
+                monitoring solution</strong>. We will probably add some features to make the notification system more
+              usable, but at the moment <span class="collectd">collectd</span> is no match for a sophisticated
+              monitoring solution.</p>
+
+              <p>To make it possible to integrate <span class="collectd">collectd</span> into the popular monitoring
+              solution <a href="http://www.nagios.org/">Nagios</a>, a “check” has been written for that. It's called
+              <a href="/documentation/manpages/collectd-nagios.1.shtml"><code>collectd-nagios(1)</code></a> and allows
+              you to use Nagios to monitor if certain values have been collected and if they were in an appropriate
+              range.</p>
+{{template "footer.shtml"}}
+<!-- vim: set sw=2 sts=2 ts=8 et tw=120 : -->

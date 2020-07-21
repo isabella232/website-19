@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>{{.Title}} &ndash; collectd &ndash; The system statistics collection daemon</title>
+    <link href="/css/table.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="/images/icon-16.png" type="image/png" sizes="16x16" />
+    <meta name="Robots" content="index,follow" />
+    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.socialshareprivacy.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($){
+        if($('#socialshareprivacy').length > 0){
+          $('#socialshareprivacy').before('<hr />');
+          $('#socialshareprivacy').socialSharePrivacy({
+            'uri': 'http://collectd.org/',
+            'css_path': 'js/socialshareprivacy/socialshareprivacy.css',
+            'services': {
+              'gplus': {
+                'perma_option': 'off',
+                'dummy_img': 'js/socialshareprivacy/images/dummy_gplus.png',
+                'language': 'en',
+                'txt_info': 'Privacy measure: Click to enable button.',
+              },
+              'facebook': {
+                'perma_option': 'off',
+                'dummy_img': 'js/socialshareprivacy/images/dummy_facebook.png',
+                'language': 'en_US',
+                'action': 'like',
+                'txt_info': 'Privacy measure: Click to enable button.',
+              },
+              'twitter': {
+                'perma_option': 'off',
+                'dummy_img': 'js/socialshareprivacy/images/dummy_twitter.png',
+                'language': 'en',
+                'txt_info': 'Privacy measure: Click to enable button.',
+              }
+            }
+          }); 
+        }
+      });
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-42250843-2', 'collectd.org');
+      ga('send', 'pageview');
+    </script>
+    <meta property="fb:page_id" content="288250321275420" />
+  </head>
+  <body>
+    <table id="layout-table">
+      <tr>
+        <td id="l00" class="layout-cell" colspan="2"><a href="/"><h1>collectd</h1></a></td>
+        <td id="l02" class="layout-cell" colspan="2">
+          <div id="l02-wrapper">
+            <div id="btn-homepage" class="top-button">Homepage</div>
+	    <a id="btn-wiki" class="top-button" href="/wiki/">Wiki</a>
+          </div>
+        </td>
+	<td id="l04" class="layout-cell"></td>
+      </tr>
+      <tr>
+	<td id="l10" class="layout-cell"></td>
+	<td id="l11" class="layout-cell"></td>
+	<td id="l12" class="layout-cell"></td>
+	<td id="l13" class="layout-cell"></td>
+	<td id="l14" class="layout-cell"></td>
+      </tr>
+      <tr>
+	<td id="l20" class="layout-cell"></td>
+	<td id="l21" class="layout-cell">
+{{template "menu.shtml" .}}
+	</td>
+	<td id="l22" class="layout-cell"></td>
+	<td id="l23" class="layout-cell">
+          <div id="content-cell">
