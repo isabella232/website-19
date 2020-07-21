@@ -1,0 +1,11 @@
+runtime: go113
+
+automatic_scaling:
+  max_idle_instances: 1
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /.*
+  script: auto
