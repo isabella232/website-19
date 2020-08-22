@@ -35,15 +35,9 @@
               <p>Some of us are hanging out in <code>#collectd</code> on <a href="http://freenode.net/">freenode</a>.
               Feel free to join us there&nbsp;:)</p>
 
-	      <h2>Google+</h2>
-	      <p>We have a <a href="https://plus.google.com/">Google+</a> page,
-	      <a href="https://plus.google.com/108065990339533055065" rel="publisher">+collectd</a>. We'll be using this
-	      as a development micro-blog and post about current developments, requests for review, cool new uses and so
-	      on. The link <a href="http://collectd.org/+">http://collectd.org/+</a> will redirect you to there.</p>
-
 	      <h2>Twitter</h2>
-	      <p>We have a <a href="http://twitter.com/collectd">Twitter</a> account named &quot;@collectd&quot; which we use for
-	      small project updates from time to time. Please feel free to &quot;follow&quot; us.</p>
+	      <p>Follow our Twitter account, <a href="https://twitter.com/collectd">@collectd</a>, for occasional
+	      project updates and new releases.</p>
 
 	      <h2>Security issues</h2>
 	      <p>To to report a <em>sensitive security issue</em>, reach out to 
