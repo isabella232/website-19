@@ -67,13 +67,8 @@
               </ul>
               <div style="text-align: center; font-size: smaller;">
                 <a href="contact.shtml#imprint">Imprint</a> |
-                <a href="http://www.facebook.com/collectd">Facebook</a> |
                 <a href="https://github.com/collectd">Github</a> |
-                <a href="https://plus.google.com/108065990339533055065" rel="publisher"> Google+</a> 
-                <a href="https://plus.google.com/communities/115799922821655063860">(Community)</a> |
-                <a href="http://identi.ca/collectd">identi.ca</a> |
-                <a href="https://twitter.com/collectd">Twitter</a> |
-                <a href="http://www.xing.com/net/collectd">Xing</a>
+                <a href="https://twitter.com/collectd">Twitter</a>
               </div>
 {{template "footer.shtml"}}
 <!-- vim: set sw=2 sts=2 ts=8 et tw=120 : -->
